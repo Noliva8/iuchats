@@ -1,7 +1,9 @@
 const { User, Application } = require('../models');
 
 module.exports = {
-  // Get all users
+
+  // Function to get all users
+  // --------------------------
   async getUsers(req, res) {
     try {
       const users = await User.find();
@@ -10,11 +12,14 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Get a single user
+
+  // Function to get a single user
+  // ----------------------------
   async getSingleUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId })
         .select('-__v');
+        
 
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
@@ -26,6 +31,7 @@ module.exports = {
     }
   },
   // create a new user
+  // ------------------
   async createUser(req, res) {
     try {
       const user = await User.create(req.body);
@@ -34,7 +40,8 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Delete a user and associated apps
+  // Delete a user and associated thought
+  // -------------------------------------
   async deleteUser(req, res) {
     try {
       const user = await User.findOneAndDelete({ _id: req.params.userId });
@@ -43,8 +50,8 @@ module.exports = {
         return res.status(404).json({ message: 'No user with that ID' });
       }
 
-      await Application.deleteMany({ _id: { $in: user.applications } });
-      res.json({ message: 'User and associated apps deleted!' })
+      await Thought.deleteMany({ _id: { $in: user.thoughts } });
+      res.json({ message: 'User and associated thoughts deleted!' })
     } catch (err) {
       res.status(500).json(err);
     }

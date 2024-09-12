@@ -32,6 +32,9 @@ connection.once('open', async () => {
     });
   }
 
+
+
+
   await User.insertMany(users);
   await Application.insertMany(applications);
 
