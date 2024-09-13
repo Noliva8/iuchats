@@ -1,5 +1,13 @@
 [
     {
-        
+       "thoughtText": "this is a sample thought",
+       "username": "Olivier"
+
+    },
+
+    {
+       "thoughtText": "this is a sample thought 2",
+       "username": "Ian"
+
     }
 ]

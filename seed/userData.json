@@ -1,11 +1,15 @@
 [
     {
         "username": "Olivier Ndicungiye",
-        "email" : "nolivanoly@gmail.com"
+        "email" : "nolivangoly@gmail.com",
+        "thoughts": [],
+        "friends": []
     },
 
      {
         "username": "Juliet Mutoni",
-        "email" : "mutonijul@gmail.com"
+        "email" : "mutonijul@gmail.com",
+        "thoughts": [],
+        "friends": []
     }
 ]
