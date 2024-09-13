@@ -18,6 +18,7 @@ I used Express.js for routing, a MongoDB database, and the Mongoose ODM. In addi
 
 ## Usage
 Links to an external site. and Mongoose Links to an external site packages. I also optionally used native JavaScript Date object to format timestamps.
+this is walkthrough video link: https://www.youtube.com/watch?v=XElp91t7L6o
 
 ## License
 
